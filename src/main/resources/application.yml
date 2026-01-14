@@ -1,0 +1,23 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    # 'mem:taskdb' means in-memory database named 'taskdb'
+    url: jdbc:h2:mem:taskdb
+    username: sa
+    password: 
+  h2:
+    console:
+      enabled: true  # Access via http://localhost:8080/h2-console
+      path: /h2-console
+
+# MyBatis Plus Configuration
+mybatis-plus:
+  configuration:
+    # Print SQL to console - CRITICAL for learning!
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
